@@ -17,7 +17,7 @@ public class MusicData implements Parcelable {
         duration = in.readInt();
         musicPath = in.readString();
         status = in.readInt();
-        //dd
+        //dd2222
     }
 
     public int getCurrentPosition() {
