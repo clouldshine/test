@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="15dp"
+    android:paddingTop="70dp"
+    tools:context=".MainActivity">
+
+    <!-- panel: select music -->
+    <TextView
+        android:id="@+id/select_music_path"
+        android:layout_width="0dp"
+        android:layout_height="72dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/text_border_all"
+        android:gravity="center_vertical"
+        android:maxLines="3"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="5dp"
+        android:textSize="14sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/select_music_panel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/select_music_panel"
+        android:layout_width="wrap_content"
+        android:layout_height="72dp"
+        android:orientation="vertical"
+        app:layout_constraintLeft_toRightOf="@id/select_music_path"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/select_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border_all_selector"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="5dp"
+            android:text="选择歌曲"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/select_music_init"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_border_all_selector"
+            android:enabled="false"
+            android:gravity="center"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="5dp"
+            android:text="加载歌曲"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- panel: play music -->
+    <ProgressBar
+        android:id="@+id/music_progress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/select_music_path" />
+
+    <LinearLayout
+        android:id="@+id/music_info_panel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_border_all"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/music_progress">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="5dp"
+            android:paddingLeft="5dp"
+            android:text="正在播放："
+            android:textColor="#969696"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/music_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:padding="5dp"
+            android:textColor="#969696"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/music_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_border_all"
+        android:gravity="center"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:text="播放歌曲 ||"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/music_stop"
+        app:layout_constraintTop_toBottomOf="@id/music_info_panel" />
+
+    <TextView
+        android:id="@+id/music_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button_border_all_selector"
+        android:gravity="center"
+        android:paddingHorizontal="15dp"
+        android:paddingVertical="5dp"
+        android:text="停止歌曲"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toRightOf="@id/music_play"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/music_info_panel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
